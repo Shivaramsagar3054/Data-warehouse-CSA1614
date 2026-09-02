@@ -1,0 +1,4 @@
+Cluster,Patient Count,Percentage (%),Avg Age (Years),Avg Length of Stay (Days),Avg Medications,Avg Lab Procedures,Avg Prior Visits,30-Day Readmission Rate (%),Analytical Segment Persona
+Cluster 0,960,64.0,63.4,2.99,12.42,37.63,0.67,14.27,Moderate Utilization / Standard Inpatient Segment
+Cluster 1,499,33.27,70.2,7.29,23.53,55.31,1.14,19.84,High Utilization / Complex Case Patients
+Cluster 2,41,2.73,63.0,3.8,14.9,38.17,8.44,51.22,High Utilization / Complex Case Patients

@@ -1,0 +1,21 @@
+# Large Data files (downloaded programmatically)
+data/raw/*.csv
+!data/raw/.gitkeep
+data/processed/*.csv
+!data/processed/.gitkeep
+data/warehouse/*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Models / Large Artifacts
+*.joblib
+*.pkl
+
+# Environments
+venv/
+ENV/
+.env

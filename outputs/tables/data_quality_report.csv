@@ -1,0 +1,13 @@
+metric,value
+Total Rows (Original Raw),101766.0
+Total Rows (After Cleaning),101763.0
+Total Rows (30-Day Binary ML Dataset),66218.0
+Total Features (Original),50.0
+Total Features (After Transformation),56.0
+Missing Values (Before),374017.0
+Missing Values (After),182964.0
+Duplicate Records (Before),0.0
+Duplicate Records (After),0.0
+30-Day Readmission Count (<30),11357.0
+No Early Readmission Count (NO),54861.0
+30-Day Readmission Rate (%),17.15
