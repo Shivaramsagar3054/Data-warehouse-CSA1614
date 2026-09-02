@@ -1,0 +1,7 @@
+diabetes <- read.csv("diabetes.csv")
+nb_model <- naiveBayes(Outcome ~ ., data=diabetes)
+nb_pred <- predict(nb_model, diabetes)
+svm_model <- svm(Outcome ~ ., data=diabetes)
+svm_pred <- predict(svm_model, diabetes)
+table(nb_pred, diabetes$Outcome)
+table(svm_pred, diabetes$Outcome)

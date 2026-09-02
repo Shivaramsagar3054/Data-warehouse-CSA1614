@@ -1,0 +1,4 @@
+### 6. Multiple Lines in Line Chart (mtcars)
+plot(mtcars$mpg, type="l", col="blue", ylab="Values", xlab="Index")
+lines(mtcars$qsec, col="red")
+legend("topright", legend=c("mpg","qsec"), col=c("blue","red"), lty=1)

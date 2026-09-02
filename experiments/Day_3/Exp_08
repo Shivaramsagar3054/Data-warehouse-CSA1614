@@ -1,0 +1,6 @@
+##8. Marks partitioning
+marks <- c(55,60,71,63,55,65,50,55,58,59,61,63,65,67,71,72,75)
+hist(marks, breaks=3, col="lightblue", main="Equal-Frequency Partitioning")
+hist(marks, breaks=seq(min(marks),max(marks),length.out=4), col="orange", main="Equal-Width Partitioning")
+marks_cluster <- kmeans(marks, centers=3)
+plot(marks, col=marks_cluster$cluster, main="Clustering of Marks")

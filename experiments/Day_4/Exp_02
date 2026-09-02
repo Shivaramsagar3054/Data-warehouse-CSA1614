@@ -1,0 +1,8 @@
+### 2. Max number of rules & frequent itemsets
+items <- c("M","O","N","K","E","Y","D","A","U","C","I")
+n_items <- length(unique(items))
+max_rules <- 3^n_items - 2^(n_items+1) + 1
+max_rules
+max_itemset_size <- n_items
+max_itemset_size
+

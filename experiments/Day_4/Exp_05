@@ -1,0 +1,4 @@
+### 5. Histogram (AirPassengers dataset)
+hist(AirPassengers, breaks=seq(100,700,150),
+     col="lightblue", main="AirPassengers Histogram",
+     xlab="Passengers")

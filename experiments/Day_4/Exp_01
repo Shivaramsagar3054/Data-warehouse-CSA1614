@@ -1,0 +1,15 @@
+### 1. Apriori & FP-Growth (support=3, confidence=50%)
+transactions <- list(
+  c("M","O","N","K","E","Y"),
+  c("D","O","N","K","E","Y"),
+  c("M","A","K","E"),
+  c("M","U","C","K","Y"),
+  c("C","O","O","K","I","E")
+)
+trans <- as(transactions, "transactions")
+
+rules_apriori <- apriori(trans, parameter=list(supp=0.3, conf=0.5))
+inspect(rules_apriori)
+
+frequent_items <- eclat(trans, parameter=list(supp=0.3))
+inspect(frequent_items)

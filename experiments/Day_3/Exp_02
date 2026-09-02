@@ -1,0 +1,12 @@
+employee <- data.frame(
+  EmployeID=c(111,222,333,444,555,666),
+  Gender=c("Male","Male","Female","Female","Female","Male"),
+  Age=c(28,25,26,25,30,29),
+  Salary=c(150000,150000,160000,160000,170000,200000),
+  Credit=c(39,27,42,40,64,72)
+)
+emp_cluster <- kmeans(employee[,c("Salary","Credit")], centers=3)
+plot(employee$Salary, employee$Credit,
+ col=emp_cluster$cluster,
+ main="Employee Clustering",
+ xlab="Salary", ylab="Credit")

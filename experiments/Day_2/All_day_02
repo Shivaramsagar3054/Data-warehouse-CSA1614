@@ -1,0 +1,233 @@
+Name: GULLAPELLY VIGNESH
+Reg_No: 192373051
+
+1.Covariance and correlation 
+
+                                                                        Photograph:
+                         Age of child               A                      B                      C
+         				   5-6 years:      18                     22                     20
+
+                                    7-8 years:         2                    28                     40
+
+                                    9-10 years:     20                     10                     40
+
+1.	Use cov() to calculate the sample covariance between B  and  C.
+2.	Use another call to cov() to calculate the sample covariance matrix for the preferences.
+3.	Use cor() to calculate the sample correlation between B and C.
+4.	Use another call to cor() to calculate the sample correlation matrix for the preferences.
+# Data
+A <- c(18, 2, 20)
+B <- c(22, 28, 10)
+C <- c(20, 40, 40)
+# Create data frame
+preferences <- data.frame(A, B, C)
+# 1. Sample covariance between B and C
+cov(B, C)
+# 2. Sample covariance matrix
+cov(preferences)
+# 3. Sample correlation between B and C
+cor(B, C)
+# 4. Sample correlation matrix
+cor(preferences)
+ 
+18, 18, 18, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 25, 25, 25, 25, 25, 28, 28, 30, 
+30, 30. 
+(i) Partition the dataset using an equal-frequency partitioning method with bin equal to 3 (ii) apply data smoothing using bin means and bin boundary.
+(iii) Plot Histogram for the above frequency division 
+2.Imagine that you have selected data from the All Electronics data warehouse for analysis. The data set will be huge! The following data are a list of All Electronics prices for commonly sold items (rounded to the nearest dollar). The numbers have been sorted: 1, 1, 5, 5, 5, 5, 5, 8, 8, 10, 10, 10, 10, 12, 14, 14, 14, 15, 15, 15, 15, 15, 15, 18, 18, 18, 18, 18, 
+# Electronics prices
+data <- c(
+  1, 1, 5, 5, 5, 5, 8, 8, 10, 10, 10,
+  12, 14, 14, 14, 15, 15, 15, 15, 18,
+  18, 18, 18, 18, 20, 20, 20, 20, 20,
+  21, 21, 21, 21, 25, 25, 25, 25, 25,
+  28, 28, 30
+)
+# Equal-frequency bins of size 3
+bins <- split(data, ceiling(seq_along(data) / 3))
+print(bins)
+# Bin mean smoothing
+bin_means <- sapply(bins, mean)
+smoothed_mean <- unlist(
+  lapply(bins, function(x) rep(mean(x), length(x)))
+)
+# Bin boundary smoothing
+smoothed_boundary <- unlist(
+  lapply(bins, function(x) {
+    lower <- min(x)
+    upper <- max(x)
+    sapply(x, function(v) {
+      if(abs(v - lower) <= abs(v - upper))
+        lower
+      else
+        upper
+    })
+  })
+)
+# Display results
+result <- data.frame(
+  Original = data,
+  Bin_Mean = smoothed_mean,
+  Bin_Boundary = smoothed_boundary
+)
+print(result)
+# Histogram
+hist(data,
+     main = "Histogram of Electronics Prices",
+     xlab = "Price",
+     ylab = "Frequency",
+     breaks = 10)
+ 
+
+
+
+
+
+3.Two Maths teachers are comparing how their Year 9 classes performed in the end of year exams. Their results are as follows:
+Class A: 76, 35, 47, 64, 95, 66, 89, 36, 8476,35,47,64,95,66,89,36,84 
+Class B: 51, 56, 84, 60, 59, 70, 63, 66, 5051,56,84,60,59,70,63,66,50 
+(i) Find which class had scored higher mean, median and range.
+(ii) Plot above in boxplot and give the inferences 
+# Class data
+classA <- c(76, 35, 47, 64, 95, 66, 89, 36, 84)
+classB <- c(51, 56, 84, 60, 59, 70, 63, 66, 50)
+# Mean
+mean(classA)
+mean(classB)
+# Median
+median(classA)
+median(classB)
+# Range
+range(classA)
+range(classB)
+# Boxplot
+boxplot(classA, classB,
+        names = c("Class A", "Class B"),
+        main = "Class A vs Class B",
+        ylab = "Scores")
+ 
+4.Let us consider one example to make the calculation method clear. Assume that the minimum and maximum values for the feature F are $50,000 and $100,000 correspondingly. It needs to range F from 0 to 1. In accordance with min-max normalization, v = $80,
+b) Use the two methods below to normalize the following group of data: 200, 300, 400, 600, 1000
+ (a) min-max normalization by setting min = 0 and max = 1
+ (b) z-score normalization
+
+# Min-Max normalization example
+min <- 50000
+max <- 100000
+v <- 80000
+normalized <- (v - min) / (max - min)
+print(normalized)
+# Given data
+data <- c(200, 300, 400, 600, 1000)
+# Min-Max normalization
+minmax <- (data - min(data)) / (max(data) - min(data))
+print(minmax)
+# Z-score normalization
+zscore <- (data - mean(data)) / sd(data)
+print(zscore)
+ 
+
+5.Make a histogram for the “AirPassengers “dataset, start at 100 on the x-axis, and from values 200 to 700, make the bins 150 wide
+data(AirPassengers)
+
+hist(AirPassengers,
+     breaks = c(100, 250, 400, 550, 700),
+     main = "Histogram of AirPassengers",
+     xlab = "Passengers",
+     ylab = "Frequency",
+     xlim = c(100, 700))
+ 
+6.Obtain Multiple Lines in Line Chart using a single Plot Function in R.Use attributes“mpg”and“qsec”of   the dataset “mtcars”
+data(mtcars)
+
+matplot(mtcars[, c("mpg", "qsec")],
+        type = "l",
+        lty = 1,
+        xlab = "Observation",
+        ylab = "Value",
+        main = "MPG and QSEC")
+
+legend("topright",
+       legend = c("MPG", "QSEC"),
+       lty = 1)
+ 
+7.Download the Dataset "water" From R dataset Link.Find out whether there is a linear relation between attributes"mortality" and"hardness" by plot function.Fit the Data into the Linear Regression model.Predict the mortality for the hardness=88.
+install.packages("HSAUR")
+library(HSAUR)
+data(water)
+# Scatter plot
+plot(water$hardness,
+     water$mortality,
+     main = "Mortality vs Hardness",
+     xlab = "Hardness",
+     ylab = "Mortality",
+     pch = 19)
+# Regression line
+model <- lm(mortality ~ hardness, data = water)
+abline(model)
+# Display model
+summary(model)
+# Predict mortality for hardness = 88
+newdata <- data.frame(hardness = 88)
+predict(model, newdata)
+ 
+
+
+8.Create a Boxplot graph for the relation between "mpg"(miles per galloon) and "cyl"(number of Cylinders) for the dataset "mtcars" available in R Environment.
+data(mtcars)
+boxplot(mpg ~ cyl,
+        data = mtcars,
+        main = "MPG vs Number of Cylinders",
+        xlab = "Number of Cylinders",
+        ylab = "Miles Per Gallon")
+ 
+   9. Assume the Tennis coach wants to determine if any of his team players are scoring   
+      outliers. To visualize the distribution of points scored by his players, then how can he    
+      decide to develop the box plot? Give suitable example using Boxplot visualization   
+      technique.
+# Points scored by players
+points <- c(10, 12, 15, 16, 18, 20,
+            21, 22, 24, 25, 27, 50)
+
+# Boxplot
+boxplot(points,
+        main = "Tennis Players' Scores",
+        ylab = "Points Scored")
+
+# Find outliers
+boxplot.stats(points)$out
+ 
+10. Implement using R language in which age group of people are affected byblood pressure based on the diabetes dataset show it using scatterplot and bar chart (that is BloodPressure vs Age using dataset “diabetes.csv”)
+# Load diabetes dataset
+diabetes <- read.csv("C:/Users/thero/Downloads/archive/diabetes.csv")
+# View data
+head(diabetes)
+# Scatterplot: Blood Pressure vs Age
+plot(diabetes$Age,
+     diabetes$BloodPressure,
+     main = "Blood Pressure vs Age",
+     xlab = "Age",
+     ylab = "Blood Pressure",
+     pch = 19)
+# Create age groups
+diabetes$AgeGroup <- cut(
+  diabetes$Age,
+  breaks = c(20, 30, 40, 50, 60, 70, 80),
+  labels = c("20-29", "30-39", "40-49",
+             "50-59", "60-69", "70-79"),
+  right = FALSE
+)
+# Calculate average Blood Pressure for each age group
+avg_bp <- aggregate(BloodPressure ~ AgeGroup,
+                    data = diabetes,
+                    FUN = mean)
+print(avg_bp)
+# Bar chart
+barplot(avg_bp$BloodPressure,
+        names.arg = avg_bp$AgeGroup,
+        main = "Average Blood Pressure by Age Group",
+        xlab = "Age Group",
+        ylab = "Average Blood Pressure")
+
+ 
+

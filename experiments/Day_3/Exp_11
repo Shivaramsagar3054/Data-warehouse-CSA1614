@@ -1,0 +1,8 @@
+#11. Normalization (strike rates)
+sr <- c(100,70,60,90,90)
+min_max <- (sr - min(sr)) / (max(sr)-min(sr))
+z_score <- (sr - mean(sr)) / sd(sr)
+mad_val <- mean(abs(sr - mean(sr)))
+z_score_mad <- (sr - mean(sr)) / mad_val
+decimal_scaling <- sr / 100
+min_max; z_score; z_score_mad; decimal_scaling

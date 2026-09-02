@@ -1,0 +1,4 @@
+### 8. Boxplot mpg vs cyl (mtcars)
+boxplot(mpg ~ cyl, data=mtcars,
+        col=c("lightblue","lightgreen","pink"),
+        main="MPG vs Cylinders")

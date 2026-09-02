@@ -1,0 +1,11 @@
+# 9. Decision tree ARFF example (simplified)
+# Example dataset
+dt_data <- data.frame(
+  Outlook=c("Sunny","Sunny","Overcast","Rain","Rain","Rain","Overcast","Sunny","Sunny","Rain","Sunny","Overcast","Overcast","Rain"),
+  Temp=c("Hot","Hot","Hot","Mild","Cool","Cool","Cool","Mild","Cool","Mild","Mild","Mild","Hot","Mild"),
+  Humidity=c("High","High","High","High","Normal","Normal","Normal","High","Normal","Normal","Normal","High","Normal","High"),
+  Wind=c("Weak","Strong","Weak","Weak","Weak","Strong","Strong","Weak","Weak","Weak","Strong","Strong","Weak","Strong"),
+  Play=c("No","No","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No")
+)
+dt_model2 <- rpart(Play ~ ., data=dt_data, method="class")
+plot(dt_model2); text(dt_model2)

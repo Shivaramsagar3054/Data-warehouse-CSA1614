@@ -1,0 +1,5 @@
+### 4. Linear & Multiple Regression (diabetes.csv)
+lm1 <- lm(BloodPressure ~ Age, data=diabetes)
+summary(lm1)
+lm2 <- lm(BloodPressure ~ Age + Glucose, data=diabetes)
+summary(lm2)

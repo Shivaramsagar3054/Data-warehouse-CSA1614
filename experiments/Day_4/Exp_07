@@ -1,0 +1,6 @@
+### 7. Linear Regression (water dataset)
+data("water")
+plot(water$hardness, water$mortality, main="Mortality vs Hardness")
+model <- lm(mortality ~ hardness, data=water)
+abline(model, col="red")
+predict(model, data.frame(hardness=88))

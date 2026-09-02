@@ -1,0 +1,10 @@
+mall <- data.frame(
+  CustomerID=1:10,
+  Age=c(19,35,26,27,19,40,23,30,35,31),
+  Gender=c("Male","Male","Female","Female","Female","Male","Male","Female","Male","Female"),
+  AnnualIncome=c(15,26,30,35,40,70,85,60,75,50),
+  SpendingScore=c(39,81,6,77,40,76,73,40,60,42)
+)
+mall_cluster <- kmeans(mall[,c("AnnualIncome","SpendingScore")], centers=5)
+plot(mall$AnnualIncome, mall$SpendingScore, col=mall_cluster$cluster,
+     main="Mall Customer Segmentation", xlab="Annual Income", ylab="Spending Score")

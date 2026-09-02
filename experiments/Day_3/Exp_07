@@ -1,0 +1,7 @@
+## 7. Decision Tree vs SVM (diabetes.csv)
+dt_model <- rpart(Outcome ~ ., data=diabetes, method="class")
+dt_pred <- predict(dt_model, diabetes, type="class")
+svm_model2 <- svm(Outcome ~ ., data=diabetes)
+svm_pred2 <- predict(svm_model2, diabetes)
+table(dt_pred, diabetes$Outcome)
+table(svm_pred2, diabetes$Outcome)

@@ -1,0 +1,6 @@
+### 10. Diabetes Dataset Visualization
+plot(diabetes$Age, diabetes$BloodPressure,
+     main="Blood Pressure vs Age",
+     xlab="Age", ylab="Blood Pressure", col="blue")
+barplot(diabetes$BloodPressure, names.arg=diabetes$Age,
+        col="green", main="Blood Pressure by Age")

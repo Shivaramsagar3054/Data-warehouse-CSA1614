@@ -1,0 +1,2 @@
+veg <- c("yes","yes","yes","no","yes","no","no","yes","yes","yes")
+table(veg)

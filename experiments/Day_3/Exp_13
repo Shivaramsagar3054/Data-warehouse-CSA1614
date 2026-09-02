@@ -1,0 +1,13 @@
+#13. Apriori & FP-Growth comparison
+transactions3 <- list(
+  c("M","O","N","K","E","Y"),
+  c("D","O","N","K","E","Y"),
+  c("M","A","K","E"),
+  c("M","U","C","K","Y"),
+  c("C","O","O","K","I","E")
+)
+trans3 <- as(transactions3, "transactions")
+rules_apriori3 <- apriori(trans3, parameter=list(supp=0.3, conf=0.7))
+inspect(rules_apriori3)
+rules_fp3 <- eclat(trans3, parameter=list(supp=0.3))
+inspect(rules_fp3)

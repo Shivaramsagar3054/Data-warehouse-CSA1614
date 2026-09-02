@@ -1,0 +1,10 @@
+transactions <- list(
+  c("M","O","N","K","E","Y"),
+  c("D","O","N","K","E","Y"),
+  c("M","A","K","E"),
+  c("M","U","C","K","Y"),
+  c("C","O","O","K","I","E")
+)
+trans <- as(transactions, "transactions")
+rules_fp <- apriori(trans, parameter=list(supp=0.5, conf=0.75))
+inspect(rules_fp)

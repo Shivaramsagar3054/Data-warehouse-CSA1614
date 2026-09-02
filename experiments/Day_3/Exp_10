@@ -1,0 +1,17 @@
+#10. Apriori vs FP-Growth (ARFF dataset)
+transactions2 <- list(
+  c("SONY","BPL","LG"),
+  c("BPL","SAMSUNG"),
+  c("BPL","ONIDA"),
+  c("SONY","BPL","SAMSUNG"),
+  c("SONY","ONIDA"),
+  c("BPL","ONIDA"),
+  c("SONY","ONIDA"),
+  c("SONY","BPL","ONIDA","LG"),
+  c("SONY","BPL","ONIDA")
+)
+trans2 <- as(transactions2, "transactions")
+rules_apriori2 <- apriori(trans2, parameter=list(supp=0.2, conf=0.5))
+inspect(rules_apriori2)
+rules_fp2 <- eclat(trans2, parameter=list(supp=0.2))
+inspect(rules_fp2)

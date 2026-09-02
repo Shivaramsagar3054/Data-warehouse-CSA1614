@@ -1,0 +1,8 @@
+### 3. Bayes Classification & Decision Tree (diabetes.csv)
+diabetes <- read.csv("diabetes.csv")
+model_nb <- naiveBayes(Outcome ~ ., data=diabetes)
+pred_nb <- predict(model_nb, diabetes)
+table(pred_nb, diabetes$Outcome)
+model_dt <- rpart(Outcome ~ ., data=diabetes, method="class")
+plot(model_dt); text(model_dt)
+

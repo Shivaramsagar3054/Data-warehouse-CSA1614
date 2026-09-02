@@ -1,0 +1,4 @@
+
+### 9. Tennis Coach Outliers
+scores <- c(15,18,20,22,25,30,35,40,100)
+boxplot(scores, main="Tennis Players Scores", col="orange")
